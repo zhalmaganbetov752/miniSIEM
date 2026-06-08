@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.spec.bak
+
+# PyInstaller
+build/
+dist/
+*.manifest
+*.spec.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local data / secrets
+.env
+.env.*
+*.sqlite3
+*.db
+
+# Large binaries (rebuild with PyInstaller)
+# dist/miniSIEM.exe
+
+# Temporary / generated
+*.log
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Diploma temp extracts (optional — uncomment if too large)
+# ПЗ/_extracted_text*.txt
+# ПЗ/_zhalma_extracted.txt
+# ПЗ/_prv08_extracted.txt

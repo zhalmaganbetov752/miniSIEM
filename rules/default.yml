@@ -1,0 +1,25 @@
+rules:
+  - id: WIN-SEC-4625-BURST
+    title: "Brute-force: много неудачных входов"
+    description: "Если за короткое окно много событий Security 4625 — создаётся алерт."
+    severity: high
+    detector: failed_logon_burst
+    enabled_by_default: true
+    params:
+      threshold: 5
+      window_minutes: 5
+
+  - id: WIN-SEC-1102-CLEARED
+    title: "Очищен Security журнал"
+    description: "Security 1102 часто означает попытку скрыть следы."
+    severity: critical
+    detector: security_log_cleared
+    enabled_by_default: true
+
+  - id: WIN-SYSMON-PS-ENC
+    title: "PowerShell EncodedCommand (Sysmon)"
+    description: "Sysmon 1: запуск PowerShell с -enc/-EncodedCommand."
+    severity: high
+    detector: powershell_encoded_sysmon
+    enabled_by_default: true
+

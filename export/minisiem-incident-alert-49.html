@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>miniSIEM — incident alert #49</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; }
+    h1 { margin: 0 0 4px 0; }
+    h2 { margin-top: 22px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+    th { background: #f6f6f6; text-align: left; }
+    .muted { color: #666; }
+    .box { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>miniSIEM — incident alert #49</h1>
+  <div class="muted">Сгенерировано: 2026-05-25 01:32:11 UTC</div>
+
+  <h2>Алерт</h2>
+  <div class="box">
+    <div><b>ID:</b> 49</div>
+    <div><b>ts_utc:</b> 2026-05-24T18:00:23.893315+00:00</div>
+    <div><b>severity:</b> high</div>
+    <div><b>rule_id:</b> WIN-SEC-4625-BURST</div>
+    <div><b>title:</b> Подбор пароля: 5 неудачных входов за 5 мин</div>
+    <div><b>status:</b> new</div>
+  </div>
+
+  <h2>Details</h2>
+  <div class="box"><pre>Окно: 2026-05-24T23:00:09+00:00 → 2026-05-24T23:00:21+00:00</pre></div>
+
+  <h2>Комментарий аналитика</h2>
+  <div class="box"><pre></pre></div>
+
+  <h2>Действия (Actions)</h2>
+  <table>
+    <thead><tr><th>ts_utc</th><th>action_type</th><th>target</th><th>result</th><th>details</th></tr></thead>
+    <tbody><tr><td>2026-05-24T18:00:23.893428+00:00</td><td>notify</td><td>ui</td><td>dry-run</td><td>Оповестить: WIN-SEC-4625-BURST</td></tr></tbody>
+  </table>
+
+  <h2>События вокруг алерта (±10 минут)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ts_utc</th><th>channel</th><th>event_id</th>
+        <th>account</th><th>ip</th><th>logon_type</th>
+        <th>provider</th><th>computer</th><th>record_id</th>
+      </tr>
+    </thead>
+    <tbody><tr><td>2026-05-24T18:00:13+00:00</td><td>Application</td><td>16394</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9720</td></tr>
+<tr><td>2026-05-24T18:00:47+00:00</td><td>Application</td><td>16384</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9721</td></tr>
+<tr><td>2026-05-24T18:04:39+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>Dwminit</td><td>DESKTOP-F0B3FE2</td><td>9722</td></tr>
+<tr><td>2026-05-24T18:04:39+00:00</td><td>Application</td><td>9027</td><td></td><td></td><td></td><td>Desktop Window Manager</td><td>DESKTOP-F0B3FE2</td><td>9723</td></tr>
+<tr><td>2026-05-24T18:05:02+00:00</td><td>Application</td><td>16394</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9724</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28759</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>Security</td><td>4648</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28760</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\winlogon.exe</td><td></td><td>2 (Interactive (local console))</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28761</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28762</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28763</td></tr>
+<tr><td>2026-05-24T18:05:58+00:00</td><td>System</td><td>267</td><td></td><td></td><td></td><td>Win32k</td><td>DESKTOP-F0B3FE2</td><td>13698</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28764</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28765</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4648</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28766</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\winlogon.exe</td><td></td><td>2 (Interactive (local console))</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28767</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28768</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28769</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28770</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28771</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28772</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>50036</td><td></td><td></td><td></td><td>Microsoft-Windows-Dhcp-Client</td><td>DESKTOP-F0B3FE2</td><td>13699</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>50103</td><td></td><td></td><td></td><td>Microsoft-Windows-Dhcp-Client</td><td>DESKTOP-F0B3FE2</td><td>13700</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>51046</td><td></td><td></td><td></td><td>Microsoft-Windows-DHCPv6-Client</td><td>DESKTOP-F0B3FE2</td><td>13701</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>7000</td><td></td><td></td><td></td><td>Service Control Manager</td><td>DESKTOP-F0B3FE2</td><td>13702</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13703</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>1</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13704</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13705</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13706</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13707</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13708</td></tr>
+<tr><td>2026-05-24T18:05:59+00:00</td><td>Application</td><td>1531</td><td></td><td></td><td></td><td>Microsoft-Windows-User Profiles Service</td><td>DESKTOP-F0B3FE2</td><td>9725</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4799</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28773</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4799</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28774</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28775</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28776</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28777</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28778</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>5033</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28779</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4799</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28780</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Security</td><td>4799</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28781</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>System</td><td>267</td><td></td><td></td><td></td><td>Win32k</td><td>DESKTOP-F0B3FE2</td><td>13709</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>System</td><td>4000</td><td></td><td></td><td></td><td>Microsoft-Windows-WLAN-AutoConfig</td><td>DESKTOP-F0B3FE2</td><td>13711</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>System</td><td>12</td><td></td><td></td><td></td><td>Microsoft-Windows-UserModePowerService</td><td>DESKTOP-F0B3FE2</td><td>13712</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>System</td><td>12</td><td></td><td></td><td></td><td>Microsoft-Windows-UserModePowerService</td><td>DESKTOP-F0B3FE2</td><td>13713</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>System</td><td>12</td><td></td><td></td><td></td><td>Microsoft-Windows-UserModePowerService</td><td>DESKTOP-F0B3FE2</td><td>13714</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Application</td><td>5615</td><td></td><td></td><td></td><td>Microsoft-Windows-WMI</td><td>DESKTOP-F0B3FE2</td><td>9726</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>IntelDalJhi</td><td>DESKTOP-F0B3FE2</td><td>9727</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>AsusAppService</td><td>DESKTOP-F0B3FE2</td><td>9728</td></tr>
+<tr><td>2026-05-24T18:06:00+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>RtkAudioUniversalService</td><td>DESKTOP-F0B3FE2</td><td>9729</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28782</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28783</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Security</td><td>5024</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28784</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28785</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28786</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>System</td><td>27</td><td></td><td></td><td></td><td>RST Middleware</td><td>DESKTOP-F0B3FE2</td><td>13710</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>System</td><td>10001</td><td></td><td></td><td></td><td>Microsoft-Windows-WLAN-AutoConfig</td><td>DESKTOP-F0B3FE2</td><td>13715</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>System</td><td>18</td><td></td><td></td><td></td><td>TPM</td><td>DESKTOP-F0B3FE2</td><td>13716</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Application</td><td>2000</td><td></td><td></td><td></td><td>LMS</td><td>DESKTOP-F0B3FE2</td><td>9730</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>LMS</td><td>DESKTOP-F0B3FE2</td><td>9731</td></tr>
+<tr><td>2026-05-24T18:06:01+00:00</td><td>Application</td><td>5617</td><td></td><td></td><td></td><td>Microsoft-Windows-WMI</td><td>DESKTOP-F0B3FE2</td><td>9732</td></tr>
+<tr><td>2026-05-24T18:06:02+00:00</td><td>Security</td><td>4798</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28787</td></tr>
+<tr><td>2026-05-24T18:06:03+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>igccservice</td><td>DESKTOP-F0B3FE2</td><td>9733</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28788</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28789</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>5058</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28790</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>5061</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28791</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>4648</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28792</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\svchost.exe</td><td></td><td>2 (Interactive (local console))</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28793</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28794</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>System</td><td>1282</td><td></td><td></td><td></td><td>Microsoft-Windows-TPM-WMI</td><td>DESKTOP-F0B3FE2</td><td>13717</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>System</td><td>1025</td><td></td><td></td><td></td><td>Microsoft-Windows-TPM-WMI</td><td>DESKTOP-F0B3FE2</td><td>13718</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>System</td><td>7001</td><td></td><td></td><td></td><td>Microsoft-Windows-Winlogon</td><td>DESKTOP-F0B3FE2</td><td>13719</td></tr>
+<tr><td>2026-05-24T18:06:04+00:00</td><td>Application</td><td>6003</td><td></td><td></td><td></td><td>Wlclntfy</td><td>DESKTOP-F0B3FE2</td><td>9734</td></tr>
+<tr><td>2026-05-24T18:06:05+00:00</td><td>Security</td><td>4799</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28795</td></tr>
+<tr><td>2026-05-24T18:06:05+00:00</td><td>Security</td><td>4798</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28796</td></tr>
+<tr><td>2026-05-24T18:06:05+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>igfxCUIService2.0.0.0</td><td>DESKTOP-F0B3FE2</td><td>9735</td></tr>
+<tr><td>2026-05-24T18:06:05+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>igfxCUIService2.0.0.0</td><td>DESKTOP-F0B3FE2</td><td>9736</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5058</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28797</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5061</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28798</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5059</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28799</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5058</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28800</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5061</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28801</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Security</td><td>5059</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28802</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Application</td><td>6000</td><td></td><td></td><td></td><td>Wlclntfy</td><td>DESKTOP-F0B3FE2</td><td>9737</td></tr>
+<tr><td>2026-05-24T18:06:06+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>igfxCUIService2.0.0.0</td><td>DESKTOP-F0B3FE2</td><td>9738</td></tr>
+<tr><td>2026-05-24T18:06:08+00:00</td><td>Application</td><td>900</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9739</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28803</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28804</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Application</td><td>16394</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9740</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Application</td><td>1066</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9741</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Application</td><td>1003</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9742</td></tr>
+<tr><td>2026-05-24T18:06:09+00:00</td><td>Application</td><td>902</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9743</td></tr>
+<tr><td>2026-05-24T18:06:19+00:00</td><td>System</td><td>10016</td><td></td><td></td><td></td><td>DCOM</td><td>DESKTOP-F0B3FE2</td><td>13720</td></tr>
+<tr><td>2026-05-24T18:06:39+00:00</td><td>System</td><td>7045</td><td></td><td></td><td></td><td>Service Control Manager</td><td>DESKTOP-F0B3FE2</td><td>13721</td></tr>
+<tr><td>2026-05-24T18:06:39+00:00</td><td>Application</td><td>16384</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9744</td></tr>
+<tr><td>2026-05-24T18:06:39+00:00</td><td>Application</td><td>903</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9745</td></tr>
+<tr><td>2026-05-24T18:06:44+00:00</td><td>System</td><td>10016</td><td></td><td></td><td></td><td>DCOM</td><td>DESKTOP-F0B3FE2</td><td>13722</td></tr>
+<tr><td>2026-05-24T18:06:45+00:00</td><td>System</td><td>7045</td><td></td><td></td><td></td><td>Service Control Manager</td><td>DESKTOP-F0B3FE2</td><td>13723</td></tr>
+<tr><td>2026-05-24T18:06:46+00:00</td><td>System</td><td>6</td><td></td><td></td><td></td><td>Microsoft-Windows-FilterManager</td><td>DESKTOP-F0B3FE2</td><td>13724</td></tr>
+<tr><td>2026-05-24T18:07:12+00:00</td><td>Application</td><td>256</td><td></td><td></td><td></td><td>Brave-Browser</td><td>DESKTOP-F0B3FE2</td><td>9746</td></tr>
+<tr><td>2026-05-24T18:07:41+00:00</td><td>System</td><td>26</td><td></td><td></td><td></td><td>Application Popup</td><td>DESKTOP-F0B3FE2</td><td>13725</td></tr>
+<tr><td>2026-05-24T18:08:01+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>brave</td><td>DESKTOP-F0B3FE2</td><td>9747</td></tr>
+<tr><td>2026-05-24T18:08:01+00:00</td><td>Application</td><td>0</td><td></td><td></td><td></td><td>edgeupdate</td><td>DESKTOP-F0B3FE2</td><td>9748</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>Security</td><td>4624</td><td>C:\Windows\System32\services.exe</td><td></td><td>5 (Service)</td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28805</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>Security</td><td>4672</td><td></td><td></td><td></td><td>Microsoft-Windows-Security-Auditing</td><td>DESKTOP-F0B3FE2</td><td>28806</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>System</td><td>158</td><td></td><td></td><td></td><td>Microsoft-Windows-Time-Service</td><td>DESKTOP-F0B3FE2</td><td>13726</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>Application</td><td>900</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9749</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>Application</td><td>16394</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9750</td></tr>
+<tr><td>2026-05-24T18:08:02+00:00</td><td>Application</td><td>1</td><td></td><td></td><td></td><td>SecurityCenter</td><td>DESKTOP-F0B3FE2</td><td>9751</td></tr>
+<tr><td>2026-05-24T18:08:32+00:00</td><td>Application</td><td>16384</td><td></td><td></td><td></td><td>Software Protection Platform Service</td><td>DESKTOP-F0B3FE2</td><td>9752</td></tr>
+<tr><td>2026-05-24T18:08:42+00:00</td><td>System</td><td>10010</td><td></td><td></td><td></td><td>DCOM</td><td>DESKTOP-F0B3FE2</td><td>13727</td></tr></tbody>
+  </table>
+</body>
+</html>

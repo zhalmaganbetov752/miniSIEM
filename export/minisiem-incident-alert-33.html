@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>miniSIEM — incident alert #33</title>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; margin: 24px; }
+    h1 { margin: 0 0 4px 0; }
+    h2 { margin-top: 22px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; }
+    th { background: #f6f6f6; text-align: left; }
+    .muted { color: #666; }
+    .box { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; }
+    pre { white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>miniSIEM — incident alert #33</h1>
+  <div class="muted">Сгенерировано: 2026-04-27 08:48:59 UTC</div>
+
+  <h2>Алерт</h2>
+  <div class="box">
+    <div><b>ID:</b> 33</div>
+    <div><b>ts_utc:</b> 2026-04-26T15:35:32.922411+00:00</div>
+    <div><b>severity:</b> critical</div>
+    <div><b>rule_id:</b> WIN-SEC-1102-CLEARED</div>
+    <div><b>title:</b> Очищен Security журнал (1102)</div>
+    <div><b>status:</b> new</div>
+  </div>
+
+  <h2>Details</h2>
+  <div class="box"><pre>ts=2026-04-26T15:25:54.948774+00:00 record_id=10000296</pre></div>
+
+  <h2>Комментарий аналитика</h2>
+  <div class="box"><pre>test1_1</pre></div>
+
+  <h2>Действия (Actions)</h2>
+  <table>
+    <thead><tr><th>ts_utc</th><th>action_type</th><th>target</th><th>result</th><th>details</th></tr></thead>
+    <tbody><tr><td>2026-04-26T15:35:32.922622+00:00</td><td>notify</td><td>ui</td><td>dry-run</td><td>Оповестить: WIN-SEC-1102-CLEARED</td></tr></tbody>
+  </table>
+
+  <h2>События вокруг алерта (±10 минут)</h2>
+  <table>
+    <thead><tr><th>ts_utc</th><th>channel</th><th>event_id</th><th>provider</th><th>computer</th><th>record_id</th></tr></thead>
+    <tbody><tr><td>2026-04-26T15:25:36.948774+00:00</td><td>System</td><td>3</td><td>DEMO</td><td>DEMO-PC</td><td>10000293</td></tr>
+<tr><td>2026-04-26T15:25:42.948774+00:00</td><td>Application</td><td>4624</td><td>DEMO</td><td>DEMO-PC</td><td>10000294</td></tr>
+<tr><td>2026-04-26T15:25:48.948774+00:00</td><td>Microsoft-Windows-Sysmon/Operational</td><td>4625</td><td>DEMO</td><td>DEMO-PC</td><td>10000295</td></tr>
+<tr><td>2026-04-26T15:25:54.948774+00:00</td><td>Security</td><td>1102</td><td>DEMO</td><td>DEMO-PC</td><td>10000296</td></tr>
+<tr><td>2026-04-26T15:26:00.948774+00:00</td><td>System</td><td>4688</td><td>DEMO</td><td>DEMO-PC</td><td>10000297</td></tr>
+<tr><td>2026-04-26T15:26:06.948774+00:00</td><td>Application</td><td>1</td><td>DEMO</td><td>DEMO-PC</td><td>10000298</td></tr>
+<tr><td>2026-04-26T15:26:12.948774+00:00</td><td>Microsoft-Windows-Sysmon/Operational</td><td>3</td><td>DEMO</td><td>DEMO-PC</td><td>10000299</td></tr></tbody>
+  </table>
+</body>
+</html>

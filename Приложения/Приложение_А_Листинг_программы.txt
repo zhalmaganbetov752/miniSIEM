@@ -1,0 +1,131 @@
+ПРИЛОЖЕНИЕ А
+(обязательное)
+
+Листинг программы
+
+В приложении приведены ключевые фрагменты исходного кода программного
+комплекса mini SIEM: схема базы данных SQLite (модуль db.py), описание
+правил детектирования в формате YAML и реализация детектора серии
+неудачных входов WIN-SEC-4625-BURST (модуль rules.py). Полный исходный
+код размещён в репозитории проекта в каталогах minisiem/ и rules/.
+
+
+А.1 Схема базы данных и инициализация (фрагмент db.py)
+
+def connect(db_path: Path) -> sqlite3.Connection:
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    con = sqlite3.connect(str(db_path))
+    con.row_factory = sqlite3.Row
+    con.execute("PRAGMA foreign_keys = ON;")
+    con.execute("PRAGMA journal_mode = WAL;")
+    con.execute("PRAGMA synchronous = NORMAL;")
+    return con
+
+def migrate(con: sqlite3.Connection) -> None:
+    con.executescript("""
+        CREATE TABLE IF NOT EXISTS events (
+            id        INTEGER PRIMARY KEY AUTOINCREMENT,
+            ts_utc    TEXT NOT NULL,
+            channel   TEXT NOT NULL,
+            provider  TEXT,
+            event_id  INTEGER,
+            level     INTEGER,
+            computer  TEXT,
+            record_id INTEGER,
+            message   TEXT,
+            data_json TEXT
+        );
+        CREATE INDEX IF NOT EXISTS idx_events_ts          ON events(ts_utc);
+        CREATE INDEX IF NOT EXISTS idx_events_channel_ts  ON events(channel,  ts_utc);
+        CREATE INDEX IF NOT EXISTS idx_events_eventid_ts  ON events(event_id, ts_utc);
+
+        CREATE TABLE IF NOT EXISTS alerts (
+            id       INTEGER PRIMARY KEY AUTOINCREMENT,
+            ts_utc   TEXT NOT NULL,
+            rule_id  TEXT NOT NULL,
+            severity TEXT NOT NULL,
+            title    TEXT NOT NULL,
+            details  TEXT,
+            status   TEXT NOT NULL DEFAULT 'new'
+        );
+
+        CREATE TABLE IF NOT EXISTS actions (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT,
+            ts_utc      TEXT NOT NULL,
+            alert_id    INTEGER,
+            action_type TEXT NOT NULL,
+            target      TEXT,
+            result      TEXT NOT NULL,
+            details     TEXT,
+            FOREIGN KEY(alert_id) REFERENCES alerts(id) ON DELETE SET NULL
+        );
+
+        CREATE TABLE IF NOT EXISTS rules_state (
+            rule_id TEXT PRIMARY KEY,
+            enabled INTEGER NOT NULL
+        );
+    """)
+    con.commit()
+
+
+А.2 Декларативное описание правил (фрагмент rules/default.yml)
+
+rules:
+  - id: WIN-SEC-4625-BURST
+    title: "Brute-force: много неудачных входов"
+    description: "Если за короткое окно много событий Security 4625 — алерт."
+    mitre: ["T1110 Brute Force"]
+    severity: high
+    detector: failed_logon_burst
+    enabled_by_default: true
+    params:
+      threshold: 5
+      window_minutes: 5
+
+  - id: WIN-SEC-1102-CLEARED
+    title: "Очищен Security журнал"
+    description: "Security 1102 часто означает попытку скрыть следы."
+    mitre: ["T1070 Indicator Removal"]
+    severity: critical
+    detector: security_log_cleared
+    enabled_by_default: true
+
+
+А.3 Реализация детектора WIN-SEC-4625-BURST (фрагмент rules.py)
+
+def detect_failed_logon_burst(
+    events: list[dict[str, Any]],
+    *,
+    threshold: int = 5,
+    window_minutes: int = 5,
+) -> list[Alert]:
+    """Security 4625 burst в коротком временном окне."""
+    failed = [
+        e for e in events
+        if e.get("channel") == "Security"
+        and int(e.get("event_id") or 0) == 4625
+    ]
+    if not failed:
+        return []
+
+    failed.sort(key=lambda e: e.get("ts_utc", ""))
+    window = timedelta(minutes=window_minutes)
+    times  = [_parse_ts(e["ts_utc"]) for e in failed if e.get("ts_utc")]
+
+    alerts: list[Alert] = []
+    start = 0
+    for i in range(len(times)):
+        while times[i] - times[start] > window:
+            start += 1
+        count = i - start + 1
+        if count >= threshold:
+            alerts.append(Alert(
+                rule_id="WIN-SEC-4625-BURST",
+                severity="high",
+                title=f"Подбор пароля: {count} неудачных входов "
+                      f"за {window_minutes} мин",
+                details=f"Окно: {times[start].isoformat()} → "
+                        f"{times[i].isoformat()}",
+            ))
+            start = i + 1   # сдвиг окна — защита от шторма алертов
+    return alerts

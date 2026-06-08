@@ -48,7 +48,11 @@ Desktop.ini
 .coverage
 htmlcov/
 
-# Diploma temp extracts (optional — uncomment if too large)
-# ПЗ/_extracted_text*.txt
-# ПЗ/_zhalma_extracted.txt
-# ПЗ/_prv08_extracted.txt
+# Дипломные материалы (только локально, не публиковать на GitHub)
+ГЛ/
+ПЗ/
+ПЗ_заготовки/
+Правки/
+Приложения/
+Проверка/
+Титулка/

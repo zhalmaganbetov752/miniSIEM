@@ -20,17 +20,39 @@ if ($LASTEXITCODE -ne 0) {
 
 $repoName = "miniSIEM"
 
+# Папки диплома — только локально (см. .gitignore)
+$excludeDirs = @(
+    "ГЛ", "ПЗ", "ПЗ_заготовки", "Правки",
+    "Приложения", "Проверка", "Титулка"
+)
+foreach ($dir in $excludeDirs) {
+    if (Test-Path $dir) {
+        cmd /c "`"$git`" rm -r --cached --ignore-unmatch `"$dir`" 2>nul"
+    }
+}
+
 # Репозитория ещё нет — это нормально; gh repo view в таком случае пишет в stderr
 cmd /c "`"$gh`" repo view $repoName 2>nul"
 if ($LASTEXITCODE -ne 0) {
     Write-Host "Репозиторий $repoName не найден — создаю на GitHub..." -ForegroundColor Cyan
-    & $gh repo create $repoName --public --source=. --remote=origin --description "Дипломный проект: mini SIEM — анализ журналов безопасности Windows"
+    # Без --source: gh ломается на путях с кириллицей (например, ...\Диплом\...)
+    $repoUrl = & $gh repo create $repoName --public --description "Дипломный проект: mini SIEM — анализ журналов безопасности Windows"
     if ($LASTEXITCODE -ne 0) { throw "Не удалось создать репозиторий на GitHub." }
+    cmd /c "`"$git`" remote remove origin 2>nul"
+    & $git remote add origin "$repoUrl.git"
 } else {
     $url = cmd /c "`"$gh`" repo view $repoName --json url -q .url"
     Write-Host "Репозиторий уже существует: $url" -ForegroundColor Green
     cmd /c "`"$git`" remote remove origin 2>nul"
     & $git remote add origin "$url.git"
+}
+
+& $git add .gitignore upload-to-github.ps1
+cmd /c "`"$git`" add -A 2>nul"
+$status = cmd /c "`"$git`" status --porcelain"
+if ($status) {
+    & $git -c user.name="Жалмаганбетов Еламан Манарбекулы" -c user.email="zhalmaganbetov@student.kstu.kz" `
+        commit -m "Исключить дипломные папки из репозитория (ГЛ, ПЗ, Титулка и др.)"
 }
 
 & $git branch -M main
